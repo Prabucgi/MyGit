@@ -1,0 +1,10 @@
+﻿@using MultiLanguageWithDialectMvc.Extensions
+
+@{
+    ViewBag.Title = Html.GetText(nameof(Resources.Default.Home));
+}
+
+<h2> Default - @Html.GetText(nameof(Resources.Default.Home))</h2>
+<h2>Admin area- @Html.GetText(Resources.Admin.ResourceManager, nameof(Resources.Admin.Home))</h2>
+
+

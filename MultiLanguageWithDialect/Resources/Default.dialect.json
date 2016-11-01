@@ -1,0 +1,14 @@
+﻿[
+  {
+    "customer": "ABC",
+    "keys": {
+      "Home": "ABC Home"
+    }
+  },
+  {
+    "customer": "XYZ",
+    "keys": {
+      "Home": "XYZ Home"
+    }
+  }
+]

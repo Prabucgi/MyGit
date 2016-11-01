@@ -1,0 +1,50 @@
+﻿@using MultiLanguageWithDialectMvc.Extensions
+@using MultiLanguageWithDialectMvc.Models
+@model DialectViewModel
+@{
+    ViewBag.Title = Html.GetText(Resources.Admin.ResourceManager, nameof(Resources.Admin.Home));
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("Index", "Settings", FormMethod.Get))
+{
+    <br />
+    @*<input type="text" name="code" />*@
+    @Html.DropDownList("code", ViewBag.Langauges as List<SelectListItem>)
+    <input type="submit" value="Get" />
+}
+
+@using (Html.BeginForm("SaveResources", "Settings", FormMethod.Post))
+{
+    @Html.HiddenFor(m => @Model.CurrentLanguageCode)
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Default</th>
+                <th>Dialect</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < Model.ResourceKeys.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @Model.ResourceKeys[i].Name
+                        @Html.HiddenFor(m => @Model.ResourceKeys[i].Name)
+                    </td>
+                    <td>@Html.TextBoxFor(m => Model.ResourceKeys[i].Value)</td>
+                    <td>@Html.TextBoxFor(m => Model.ResourceKeys[i].Dialect)</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="3"><input type="submit" value="Save" /></td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+
