@@ -110,7 +110,6 @@ namespace CodeReviewTrackerForm
         {
             try
             {
-
                 tbBranchStart.Text = "$/42/Heroma/Tmp/IPMF";
                 LoadBranches();
                 dtStart.Value = DateTime.Today.AddDays(-30);
@@ -118,11 +117,8 @@ namespace CodeReviewTrackerForm
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error: " + ex.Message);
             }
-
-
         }
 
         private void LoadBranches()
@@ -142,14 +138,10 @@ namespace CodeReviewTrackerForm
                 WorkItems = workItem.AssociatedWorkItems,
                 FormTitle = $"{workItem.ChangesetId} - {workItem.Owner}"
             };
-
-
             detail.ShowDialog();
-
         }
         TfsService GetTfsService()
         {
-
             var tfsCollection = ConfigurationManager.AppSettings["TfsCollectionUrl"];
             var tfsService = new TfsService(new TfsConnection() { CollectionPath = tfsCollection });
             return tfsService;
