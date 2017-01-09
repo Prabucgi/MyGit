@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -148,7 +149,7 @@ namespace CodeReviewTrackerForm
         }
         TfsService GetTfsService()
         {
-            var tfsCollection = "http://wmsi004513:8080/tfs/DefaultCollection";
+            var tfsCollection = ConfigurationManager.AppSettings["TfsCollectionUrl"];
             var tfsService = new TfsService(new TfsConnection() { CollectionPath = tfsCollection });
             return tfsService;
         }

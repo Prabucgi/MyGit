@@ -3,3 +3,7 @@
 ################################################################################
 
 /CodeReviewTrackerForm/obj
+/CodeReviewTrackerForm/bin
+/TfsCore/bin
+/TfsCore/obj
+/.vs/TFSExplorer/v14
