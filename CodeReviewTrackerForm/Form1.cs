@@ -149,6 +149,7 @@ namespace CodeReviewTrackerForm
         }
         TfsService GetTfsService()
         {
+
             var tfsCollection = ConfigurationManager.AppSettings["TfsCollectionUrl"];
             var tfsService = new TfsService(new TfsConnection() { CollectionPath = tfsCollection });
             return tfsService;
