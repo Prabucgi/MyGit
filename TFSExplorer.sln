@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeReviewTrackerForm", "Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsCore", "TfsCore\TfsCore.csproj", "{F13D137F-2FE7-4C34-BF16-B81E0589FA90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeSetLinkerForm", "ChangeSetLinkerForm\ChangeSetLinkerForm.csproj", "{C14E39AB-368A-49E8-B793-13F39B5D4F7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeCodeForm", "MergeCodeForm\MergeCodeForm.csproj", "{B358E8E5-F422-433A-83A9-AA124E94B35F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{F13D137F-2FE7-4C34-BF16-B81E0589FA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F13D137F-2FE7-4C34-BF16-B81E0589FA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F13D137F-2FE7-4C34-BF16-B81E0589FA90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C14E39AB-368A-49E8-B793-13F39B5D4F7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C14E39AB-368A-49E8-B793-13F39B5D4F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C14E39AB-368A-49E8-B793-13F39B5D4F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C14E39AB-368A-49E8-B793-13F39B5D4F7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B358E8E5-F422-433A-83A9-AA124E94B35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B358E8E5-F422-433A-83A9-AA124E94B35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B358E8E5-F422-433A-83A9-AA124E94B35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B358E8E5-F422-433A-83A9-AA124E94B35F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

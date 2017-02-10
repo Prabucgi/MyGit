@@ -27,6 +27,26 @@ namespace TfsCore
             return branches;
         }
 
+        public void LinkChangeSets(int workItem, List<int> changeSetIds)
+        {
+            //var server = new TeamFoundationServer(serverName);
+            //var workItemStore = (WorkItemStore)server.GetService(typeof(WorkItemStore));
+            //var project = workItemStore.Projects[projectName];
+            //VersionControlServer versionServer = GetVersionServer();
+            //var userStoryId = 9;
+            //var changeSetsIds = new[] { 2, 3, 4, 5 };
+
+            //var userStory = versionServer.pro.Store.GetWorkItem(userStoryId);
+
+            //foreach (var changeSetId in changeSetsIds)
+            //{
+            //    var changeSetLink = new RelatedLink(changeSetId);
+            //    userStory.Links.Add(changeSetLink);
+            //}
+
+            //userStory.Save();
+        }
+
         public List<CheckInDetail> GetCheckInDetails(CheckInRequestParam requestParam)
         {
             VersionControlServer versionServer = GetVersionServer();
@@ -89,5 +109,31 @@ namespace TfsCore
             return vcs;
         }
 
+        public void MergeChangeSets(string piSourceBranch, string piTargetBranch, List<int> piChangesetIds)
+        {
+            // Get a reference to yourTeam Foundation Server. 
+            //  TfsTeamProjectCollection tpc = new TfsTeamProjectCollection(new Uri("http://<yourserver>:8080/tfs/<yourcollection> "));
+
+            // Get a reference to Version Control. 
+            //  VersionControlServer versionControl = tpc.GetService<VersionControlServer>();
+            VersionControlServer versionServer = GetVersionServer();
+            Workspace workspace = versionServer.GetWorkspace(@"C:\Users\chendurpandianp\Code\Dev2013");
+
+            piChangesetIds.ForEach(cs =>
+            {
+                VersionSpec changesetToMerge = new ChangesetVersionSpec(cs);
+
+                // actually pend the merge
+                GetStatus status = workspace.Merge(piSourceBranch, piTargetBranch, changesetToMerge, changesetToMerge);
+                if (status.NumConflicts > 0)
+                {
+                    // workspace.MergeContent(status.)
+                }
+
+                // check in the merge
+                workspace.CheckIn(workspace.GetPendingChanges(), "Platform merge");
+            });
+
+        }
     }
 }

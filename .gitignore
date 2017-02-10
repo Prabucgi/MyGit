@@ -7,3 +7,6 @@
 /TfsCore/bin
 /TfsCore/obj
 /.vs/TFSExplorer/v14
+/ChangeSetLinkerForm/obj/Debug
+/MergeCodeForm/bin/Debug
+/MergeCodeForm/obj/Debug
